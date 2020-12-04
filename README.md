@@ -36,33 +36,33 @@ To get started:
 - Build both solutions using the Build menu in Visual Studio
 - Start `GGsAppREST.sln` and this page should show up
   
-![GGsRest_StartPoint](images/GGsREST_StartPoint.png)
+![GGsRest_StartPoint](Images/GGsREST_StartPoint.png)
 
 - Copy the url up to Swagger (i.e. https://localhost:44316/ in the picture above)
 - In the GGsWeb Project, set the `url` variable in the `Constants.cs` class to the url of the `GGsAppREST.sln` project as pictured below
 
-![copyurl](images/copyurl.png)
+![copyurl](Images/copyurl.png)
 
 - Start the `GGsApp.sln`, you should see the following website appear
 
-![apphome](images/apphome.png)
+![apphome](Images/apphome.png)
 
 ## Usage
 - First, create an account by clicking on the 'Sign up' button
 - This should bring you to the inventory page
 
-![inventory](./images/inventory.png)
+![inventory](Images/inventory.png)
 
 - Click 'Add to Cart' to add a single product to the cart
 - Click 'Details' to view the video game details and add multiple copies to cart
 
-![details](images/details.png)
+![details](Images/details.png)
 
 - Use the Nav Bar to navigate to your cart or view order history
 
-![cart](images/cart.png)
+![cart](Images/cart.png)
 
-![orderhistory](images/orderhistory.png)
+![orderhistory](Images/orderhistory.png)
 
 - To sign in as a manager, use the following credentials
   **email**: jjennings@gmail.com
