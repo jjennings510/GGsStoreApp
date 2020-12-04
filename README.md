@@ -37,18 +37,22 @@ To get started:
 - Start `GGsAppREST.sln` and this page should show up
   
 ![GGsRest_StartPoint](images/GGsREST_StartPoint.png)
+
 - Copy the url up to Swagger (i.e. https://localhost:44316/ in the picture above)
 - In the GGsWeb Project, set the `url` variable in the `Constants.cs` class to the url of the `GGsAppREST.sln` project as pictured below
 
 ![copyurl](images/copyurl.png)
+
 - Start the `GGsApp.sln`, you should see the following website appear
 
 ![apphome](images/apphome.png)
+
 ## Usage
 - First, create an account by clicking on the 'Sign up' button
 - This should bring you to the inventory page
 
-![inventory](images/inventory.png)
+![inventory](./images/inventory.png)
+
 - Click 'Add to Cart' to add a single product to the cart
 - Click 'Details' to view the video game details and add multiple copies to cart
 
@@ -57,6 +61,7 @@ To get started:
 - Use the Nav Bar to navigate to your cart or view order history
 
 ![cart](images/cart.png)
+
 ![orderhistory](images/orderhistory.png)
 
 - To sign in as a manager, use the following credentials
