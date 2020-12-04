@@ -1,0 +1,58 @@
+﻿@model GGsWeb.Models.VideoGame
+
+@using Microsoft.AspNetCore.Http;
+@using GGsWeb.Models;
+@inject Microsoft.AspNetCore.Http.IHttpContextAccessor HttpContextAccessor
+@{
+    User user = new User();
+    if (HttpContextAccessor.HttpContext.Session.GetObject<User>("User") != null)
+    {
+        user = HttpContextAccessor.HttpContext.Session.GetObject<User>("User");
+    }
+    ViewData["Title"] = "Details";
+}
+
+@if (user.type == GGsWeb.Models.User.userType.Customer)
+{<a asp-action="GetInventory" asp-controller="Customer">Back to List</a>}
+else
+{<a asp-action="GetInventory" asp-controller="Manager" asp-route-locationId="1">Back to List</a>}
+<hr />
+<div class="container text-white">
+    <div class="row">
+        <div class="col-6">
+            <div class="media">
+                <img src="@Model.imageURL" alt="" class="img-fluid">
+            </div>
+        </div>
+        <div class="col-6 align-self-center">
+            <h3 class="display-4">@Html.DisplayFor(model => model.name)</h3>
+            <p><span class="text-muted">@Html.DisplayNameFor(model => model.platform):</span><span class=""> @Html.DisplayFor(model => model.platform)</span></p>
+            <p><span class="text-muted">@Html.DisplayNameFor(model => model.esrb):</span><span class=""> @Html.DisplayFor(model => model.esrb)</p>
+            <h1>@Html.DisplayFor(model => model.cost)</h1>
+            @if (user.type == GGsWeb.Models.User.userType.Customer)
+            {
+        <div class="row">
+            <form class="form-inline" asp-action="AddItemToCart" asp-controller="Customer" asp-route-quantity="quantity" asp-route-videoGameId="@Model.id">
+                <div class="form-group input-group">
+                    <div class="col">
+                        <span>
+                            <select name="quantity" class="form-control" for="quantity" asp-items="ViewBag.QuantityOptions"></select>
+                            <button class="btn btn-primary" type="submit">Add To Cart</button>
+                        </span>
+                    </div>
+                </div>
+            </form>
+        </div>
+            }
+            else
+            {<button class="btn btn-primary text-white" onclick="location.href='@Url.Action("EditInventoryItem", "Manager", new { locationId = user.locationId, videoGameId = Model.id })'">Manage Stock</button>}
+            
+        </div>
+    </div>
+    <hr />
+    <div class="background">
+        <div class="content">
+            @Html.Raw(Model.description)
+        </div>
+    </div>
+</div>

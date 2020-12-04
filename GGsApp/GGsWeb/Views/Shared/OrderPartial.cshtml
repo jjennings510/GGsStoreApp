@@ -1,0 +1,36 @@
+﻿@model GGsWeb.Models.Order
+@{
+    ViewData["Title"] = "OrderPartial";
+}
+
+<div class="card">
+    <div class="card-body">
+        <h5 class="card-title">Order #@Html.DisplayFor(model => model.id)</h5>
+        <div class="container">
+            <div class="row">
+                <div class="col">
+                    <article>
+                        Location: @Model.location.GetLocation()
+                    </article>
+                </div>
+                <div class="col">
+                    <article class="text-right">
+                        @Html.DisplayNameFor(model => model.orderDate): @Model.orderDate.ToShortDateString()
+                    </article>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col">
+                    <article>
+                        @Html.DisplayNameFor(model => model.totalCost):
+                        @Html.DisplayFor(model => model.totalCost)
+                    </article>
+                </div>
+                <div class="col">
+                    <article class="text-right">@Html.ActionLink("Details", "Receipt", "Order", Model)</article>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+

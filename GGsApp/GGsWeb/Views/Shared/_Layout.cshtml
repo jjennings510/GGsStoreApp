@@ -1,0 +1,58 @@
+﻿@using Microsoft.AspNetCore.Http;
+@using GGsWeb.Models;
+@inject Microsoft.AspNetCore.Http.IHttpContextAccessor HttpContextAccessor
+@{
+    User user = new User();
+    if (HttpContextAccessor.HttpContext.Session.GetObject<User>("User") != null)
+    {
+        user = HttpContextAccessor.HttpContext.Session.GetObject<User>("User");
+    }
+}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>@ViewData["Title"] - GGsWeb</title>
+    <link rel="icon" href="~/controller.png">
+    <link rel="stylesheet" href="~/lib/bootstrap/dist/css/bootstrap.min.css" />
+    <link rel="stylesheet" href="~/css/site.css" />
+</head>
+<body>
+    <header>
+        <nav class="navbar navbar-expand-sm navbar-toggleable-sm text-white border-bottom box-shadow mb-3">
+            <div class="container">
+                <a class="navbar-brand" asp-area="" asp-controller="Home" asp-action="Login">GGs</a>
+                <button class="navbar-toggler" type="button" data-toggle="collapse" data-target=".navbar-collapse" aria-controls="navbarSupportedContent"
+                        aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+                @if (user.type == GGsWeb.Models.User.userType.Customer)
+                {
+                    @Html.Partial("CustomerNavBar")
+                }
+                else if (user.type == GGsWeb.Models.User.userType.Manager)
+                {
+                    @Html.Partial("ManagerNavBar")
+                }
+            </div>
+        </nav>
+    </header>
+    <div class="container">
+        <vc:alert></vc:alert>
+        <main role="main" class="pb-3">
+            @RenderBody()
+        </main>
+    </div>
+
+    <footer class="border-top footer text-muted">
+        <div class="container">
+            &copy; 2020 - GGsWeb - Video game data provided by <a href="https://www.giantbomb.com/api/">GiantBomb</a> - Icons made by <a href="https://www.flaticon.com/authors/freepik" title="Freepik">Freepik</a> from <a href="https://www.flaticon.com/" title="Flaticon">www.flaticon.com</a>
+        </div>
+    </footer>
+    <script src="~/lib/jquery/dist/jquery.min.js"></script>
+    <script src="~/lib/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="~/js/site.js" asp-append-version="true"></script>
+    @RenderSection("Scripts", required: false)
+</body>
+</html>

@@ -1,0 +1,47 @@
+﻿@model GGsWeb.Models.User
+
+@{
+    ViewData["Title"] = "EditUser";
+}
+
+    <div id="cover-caption">
+        <div class="container">
+            <div class="row text-white">
+                <div class="col-xl-5 col-lg-6 col-md-8 col-sm-10 mx-auto text-center form p-4">
+                    <h1 class="display-4 py-2 text-truncate">Edit Information</h1>
+                    <div class="px-2">
+                        <form asp-action="EditUser" class="justify-content-center">
+                            <div hidden="hidden">
+                                <input asp-for="id" />
+                            </div>
+                            <div class="form-group">
+                                @*<label asp-for="email"></label>*@
+                                <input asp-for="email" type="email" class="form-control shadow-lg" aria-describedby="emailHelp" placeholder="Enter Email Address">
+                            </div>
+                            <div class="form-group">
+                                @*<label asp-for="password"></label>*@
+                                <input asp-for="password" type="password" class="form-control shadow-lg" placeholder="Enter New Password">
+                            </div>
+                            <div class="form-group">
+                                <div class="row">
+                                    <div class="col">
+                                        @*<label asp-for="name"></label>*@
+                                        <input asp-for="name" type="text" class="form-control shadow-lg" placeholder="Enter Name">
+                                    </div>
+                                    <div class="col">
+                                        <select class="form-control" asp-for="locationId" asp-items="ViewBag.locationOptions">
+                                            <option value="">Choose location</option>
+                                        </select>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <input type="submit" value="Save" class="btn btn-primary shadow-lg">
+                            </div>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+

@@ -1,0 +1,53 @@
+﻿@model GGsWeb.Models.Cart
+@{
+    ViewData["Title"] = "ViewCart";
+}
+
+<div class="text-white">
+    <h1 class="display-4">Cart Information</h1>
+    <hr />
+    @if (Model.cartItems.Count == 0)
+    {
+        <div class="alert alert-primary" role="alert">
+            Your cart is currently empty!
+        </div>
+    }
+    @foreach (var item in Model.cartItems)
+    {
+        <div class="container" style="margin-bottom: 8px">
+            @Html.Partial("CartItemPartial", item)
+        </div>
+    }
+    <hr />
+    <div class="container">
+        <h3 class="text-lg-right">Total: @Html.DisplayFor(model => model.totalCost)</h3>
+        <button class="btn btn-primary float-right" data-toggle="modal" data-target="#confirmModal">Complete Order</button>
+    </div>
+
+    <div class="modal fade" id="confirmModal" tabindex="-1" role="dialog" aria-labelledby="confirmModalLabel" aria-hidden="true">
+        <div class="modal-dialog" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="exampleModalLabel">Are you sure?</h5>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true" class="text-white">&times;</span>
+                    </button>
+                </div>
+                <div class="modal-body">
+                    <article>You are about to purchase the following items:</article>
+                    <ul>
+                        @foreach (var item in Model.cartItems)
+                        {
+                            <li>@item.videoGame.name x @item.quantity</li>
+                        }
+                    </ul>
+                    <article>For a total of <strong>@Html.DisplayFor(model => model.totalCost)</strong></article>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                    <button type="button" class="btn btn-primary" onclick="location.href='@Url.Action("AddOrder", "Order", Model)'">Confirm Order</button>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

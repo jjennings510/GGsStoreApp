@@ -1,0 +1,18 @@
+﻿
+@{
+    ViewData["Title"] = "ManagerNavBar";
+}
+
+<div class="navbar-collapse collapse d-sm-inline-flex flex-sm-row-reverse">
+    <ul class="navbar-nav flex-grow-1">
+        <li class="nav-item">
+            <a class="nav-link text-light" asp-area="" asp-controller="Manager" asp-action="GetInventory" asp-route-locationId="1">Manage Inventory</a>
+        </li>
+        <li class="nav-item">
+            <a class="nav-link text-light float-right" asp-area="" asp-controller="Order" asp-action="GetOrderHistory" asp-route-locationId="1">View Order History</a>
+        </li>
+        <li class="nav-item">
+            <a class="nav-link text-light float-right" asp-area="" asp-controller="Home" asp-action="SignOut">Sign Out</a>
+        </li>
+    </ul>
+</div>

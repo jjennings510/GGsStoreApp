@@ -1,0 +1,26 @@
+﻿@using GGsWeb.Features
+@model List<Alert>
+@{
+    ViewData["Title"] = "Alerts";
+}
+
+@foreach (var alert in Model)
+{
+    var dismissableClass = alert.Dismissable ? "alert-dismissable" : null;
+
+    <div class="alert alert-@alert.AlertStyle @dismissableClass" id="alert-container">
+        @if (alert.Dismissable)
+        {
+            <button type="button" class="close" data-dismiss="alert" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+        }
+        @Html.Raw(alert.Message)
+    </div>
+}
+
+<script>
+    setTimeout(function () {
+        $("#alert-container").fadeTo(2000, 500).slideUp(500, function () {
+            $("#alert-container").remove();
+        });
+    }, 1500);//5000=5 seconds
+</script>

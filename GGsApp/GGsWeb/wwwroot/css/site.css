@@ -1,0 +1,191 @@
+﻿/* Please see documentation at https://docs.microsoft.com/aspnet/core/client-side/bundling-and-minification
+for details on configuring this project to bundle and minify static web assets. */
+
+a.navbar-brand {
+  white-space: normal;
+  text-align: center;
+  word-break: break-all;
+}
+
+/* Provide sufficient contrast against white background */
+
+.btn-primary {
+    color: #fff;
+    background-color: #de004e;
+    border-color: #de004e;
+}
+
+.nav-pills .nav-link.active, .nav-pills .show > .nav-link {
+  color: #fff;
+  background-color: #1b6ec2;
+  border-color: #1861ac;
+}
+
+/* Sticky footer styles
+-------------------------------------------------- */
+html {
+  font-size: 14px;
+}
+@media (min-width: 768px) {
+  html {
+    font-size: 16px;
+  }
+}
+
+.border-top {
+  border-top: 1px solid #e5e5e5;
+}
+.border-bottom {
+  border-bottom: 1px solid #e5e5e5;
+}
+
+.box-shadow {
+  box-shadow: 0 .25rem .75rem rgba(0, 0, 0, .05);
+}
+
+button.accept-policy {
+  font-size: 1rem;
+  line-height: inherit;
+}
+
+/* Sticky footer styles
+-------------------------------------------------- */
+html {
+  position: relative;
+  min-height: 100%;
+}
+
+body {
+    /* Margin bottom by footer height */
+    margin-bottom: 60px;
+    background-image: url("../bg-crop.jpg");
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
+}
+.footer {
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+    white-space: nowrap;
+    background-color: #321450;
+    background-image: url("../bg-nav.jpg");
+    background-position: center;
+    background-size: cover;
+    line-height: 60px; /* Vertically center the text there */
+}
+
+#cover {
+    /*    background: #222 url('../Background.jpg') center center no-repeat;*/
+    background-size: cover;
+    height: 100%;
+    text-align: center;
+    display: flex;
+    /*    align-items: center;*/
+    position: relative;
+}
+
+#cover-caption {
+    width: 100%;
+    position: relative;
+    z-index: 1;
+}
+
+/* only used for background overlay not needed for centering */
+form:before {
+    content: '';
+    height: 100%;
+    left: 0;
+    position: absolute;
+    top: 0;
+    width: 100%;
+/*    background-color: rgba(0,0,0,0.3);*/
+    z-index: -1;
+    border-radius: 10px;
+}
+
+
+.navbar {
+    background-color: #321450;
+    background-image: url("../bg-nav.jpg");
+    background-position: center;
+    background-size: cover;
+}
+
+.card-columns {
+    @include media-breakpoint-only(lg) {
+        column-count: 4;
+    }
+    @include media-breakpoint-only(xl) {
+        column-count: 5;
+    }
+}
+
+.card-deck {
+    margin-top: 10px;
+    margin-left: auto;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+/*    grid-gap: .25rem;*/
+}
+.card-img-top {
+    width: 100%;
+    height: 15vw;
+    object-fit: contain;
+    background-color: rgba(0,0,0, 0.25);
+}
+
+.card {
+    background-color: rgba(0,0,0, 0.75);
+    border-color: white;
+}
+
+.game-image {
+    width: 100%;
+    height: 15vw;
+    object-fit: contain;
+    background-color: #092047;
+}
+
+a {
+    color: #FDF800;
+}
+
+.btn-danger {
+    background-color: #FDF800;
+    border-color: #FDF800;
+    color: black;
+}
+
+.cart-card {
+    background-color: #000000 !important;
+}
+
+hr {
+    height: 1px;
+    background-color: white;
+    border: none;
+}
+
+.modal-header {
+    background-color: #080808;
+}
+.modal-body {
+    background-color: #181818;
+}
+.modal-footer {
+    background-color: #080808;
+}
+
+.modal {
+/*    border-color: white;*/
+}
+
+.btn-primary:hover {
+    background-color: #9b0037;
+    border-color: #9b0037;
+}
+
+a:hover {
+    color: #cac600;
+}

@@ -1,0 +1,103 @@
+﻿@model GGsWeb.Models.InventoryItem
+
+@{
+    ViewData["Title"] = "EditInventoryItem";
+}
+
+@*<div class="row ">
+    <div class="col"><h1>Edit Inventory Item</h1></div>
+</div>
+<hr />
+<div class="row justify-content-center">
+    <div class="col">
+        <h3>@Html.DisplayFor(model => model.videoGame.name)</h3>
+        <h5><span class="text-muted">@Html.DisplayNameFor(model => model.videoGame.platform):</span> @Html.DisplayFor(model => model.videoGame.platform)</h5>
+        <h5><span class="text-muted">@Html.DisplayNameFor(model => model.videoGame.esrb):</span> @Html.DisplayFor(model => model.videoGame.esrb)</h5>
+        <h5><span class="text-muted">@Html.DisplayNameFor(model => model.videoGame.cost):</span> @Html.DisplayFor(model => model.videoGame.cost)</h5>
+    </div>
+    <div class="col-md-4">
+        <form asp-action="EditInventoryItem">
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+            <div class="form-group" hidden="hidden">
+                <label asp-for="id" class="control-label"></label>
+                <input asp-for="id" class="form-control" />
+                <span asp-validation-for="id" class="text-danger"></span>
+            </div>
+            <div class="form-group" hidden="hidden">
+                <label asp-for="videoGameId" class="control-label"></label>
+                <input asp-for="videoGameId" class="form-control" />
+                <span asp-validation-for="videoGameId" class="text-danger"></span>
+            </div>
+            <div class="form-group" hidden="hidden">
+                <label asp-for="locationId" class="control-label"></label>
+                <input asp-for="locationId" class="form-control" />
+                <span asp-validation-for="locationId" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="quantity" class="control-label"></label>
+                <input asp-for="quantity" class="form-control" />
+                <span asp-validation-for="quantity" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <input type="submit" value="Save" class="btn btn-primary" />
+                <button class="btn btn-danger">Delete</button>
+            </div>
+        </form>
+    </div>
+</div>
+
+<div>
+    <a asp-action="GetInventory">Back to List</a>
+</div>*@
+
+
+<a asp-action="GetInventory" asp-controller="Manager" asp-route-locationId="1">Back to List</a>
+<hr />
+<div class="container text-white">
+    <div class="row">
+        <div class="col-6">
+            <div class="media">
+                <img src="@Model.videoGame.imageURL" alt="" class="img-fluid">
+            </div>
+        </div>
+        <div class="col-6 align-self-center">
+            <h3 class="display-4">@Html.DisplayFor(model => model.videoGame.name)</h3>
+            <p><span class="text-muted">@Html.DisplayNameFor(model => model.videoGame.platform):</span><span class=""> @Html.DisplayFor(model => model.videoGame.platform)</span></p>
+            <span><span class="text-muted">@Html.DisplayNameFor(model => model.videoGame.esrb):</span><span class=""> @Html.DisplayFor(model => model.videoGame.esrb)</span>
+            <h1>@Html.DisplayFor(model => model.videoGame.cost)</h1>
+                <div class="row">
+                    <form class="form-inline" asp-action="EditInventoryItem">
+                        <div class="form-group input-group">
+                            <div class="form-group" hidden="hidden">
+                                <label asp-for="id" class="control-label"></label>
+                                <input asp-for="id" class="form-control" />
+                                <span asp-validation-for="id" class="text-danger"></span>
+                            </div>
+                            <div class="form-group" hidden="hidden">
+                                <label asp-for="videoGameId" class="control-label"></label>
+                                <input asp-for="videoGameId" class="form-control" />
+                                <span asp-validation-for="videoGameId" class="text-danger"></span>
+                            </div>
+                            <div class="form-group" hidden="hidden">
+                                <label asp-for="locationId" class="control-label"></label>
+                                <input asp-for="locationId" class="form-control" />
+                                <span asp-validation-for="locationId" class="text-danger"></span>
+                            </div>
+                            <div class="col">
+                                <span>
+                                    <input asp-for="quantity" class="form-control" />
+                                    <button class="btn btn-primary" type="submit">Update Inventory</button>
+                                </span>
+                            </div>
+                        </div>
+                    </form>
+                </div>
+        </div>
+    </div>
+    <hr />
+    <div class="background">
+        <div class="content">
+            @Html.Raw(Model.videoGame.description)
+        </div>
+    </div>
+</div>

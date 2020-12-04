@@ -1,0 +1,35 @@
+﻿@model IEnumerable<GGsWeb.Models.InventoryItem>
+
+@{
+    ViewData["Title"] = "GetInventory";
+}
+
+<div class="row justify-content-center text-white">
+    <div class="col">
+        <h1 class="display-4">Manage Inventory</h1>
+    </div>
+    <div class="col align-self-center">
+        <select class="form-control" id="locationId" asp-items="ViewBag.locationOptions" onchange="updateLocation(this.value)">
+            <option value="">Choose a different location</option>
+        </select>
+    </div>
+</div>
+<div class="row">
+    <div class="col">
+        @Html.ActionLink("Add New Product", "ViewInventoryItems")
+    </div>
+</div>
+<hr/>
+
+<div class="container card-deck card-columns">
+    @foreach (var item in Model)
+    {
+        @Html.Partial("InventoryItemPartial", item);
+    }
+</div>
+
+<script>
+    function updateLocation(val) {
+        window.location.href = "/Manager/GetInventory?locationId=" + val;
+    }
+</script>

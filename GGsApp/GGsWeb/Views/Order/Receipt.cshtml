@@ -1,0 +1,38 @@
+﻿@model GGsWeb.Models.Order
+@{
+    ViewData["Title"] = "Receipt";
+}
+
+<div class="container text-white">
+    <div class="row">
+        <div class="col">
+            <h1 class="display-4">Receipt</h1>
+        </div>
+        <div class="col align-self-center">
+            <h1 class="text-lg-right ">Total: @Html.DisplayFor(model => model.totalCost)</h1>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col">
+            <h6>Order Placed: @Model.orderDate.ToShortDateString()</h6>
+        </div>
+        <div class="col">
+            <p class="text-right">@Html.ActionLink("Go Back", "GetInventory", "Customer")</p>
+        </div>
+    </div>
+    
+</div>
+
+<hr />
+
+@foreach (var item in Model.lineItems)
+{
+    <div class="container text-white" style="margin-bottom: 8px">
+        @Html.Partial("LineItemPartial", item)
+    </div>
+}
+
+<hr />
+
+
+

@@ -1,0 +1,43 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 16
+VisualStudioVersion = 16.0.30621.155
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "GGsAPI", "GGsAPI\GGsAPI.csproj", "{CBC3E122-F9F2-4CE6-B693-2966904C96E2}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "GGsDB", "GGsDB\GGsDB.csproj", "{8B22CB32-DF6F-4E23-97EA-64BA3DC80E91}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "GGsLib", "GGsLib\GGsLib.csproj", "{9775BED0-9000-4FA2-BC60-975AD6027762}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "GGsTest", "GGsTest\GGsTest.csproj", "{5A430900-FE8E-46BE-B890-9CB1AA021762}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{CBC3E122-F9F2-4CE6-B693-2966904C96E2}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{CBC3E122-F9F2-4CE6-B693-2966904C96E2}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{CBC3E122-F9F2-4CE6-B693-2966904C96E2}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{CBC3E122-F9F2-4CE6-B693-2966904C96E2}.Release|Any CPU.Build.0 = Release|Any CPU
+		{8B22CB32-DF6F-4E23-97EA-64BA3DC80E91}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{8B22CB32-DF6F-4E23-97EA-64BA3DC80E91}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{8B22CB32-DF6F-4E23-97EA-64BA3DC80E91}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{8B22CB32-DF6F-4E23-97EA-64BA3DC80E91}.Release|Any CPU.Build.0 = Release|Any CPU
+		{9775BED0-9000-4FA2-BC60-975AD6027762}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{9775BED0-9000-4FA2-BC60-975AD6027762}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{9775BED0-9000-4FA2-BC60-975AD6027762}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{9775BED0-9000-4FA2-BC60-975AD6027762}.Release|Any CPU.Build.0 = Release|Any CPU
+		{5A430900-FE8E-46BE-B890-9CB1AA021762}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{5A430900-FE8E-46BE-B890-9CB1AA021762}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{5A430900-FE8E-46BE-B890-9CB1AA021762}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{5A430900-FE8E-46BE-B890-9CB1AA021762}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {2F1D48E1-DF8E-4847-AB5D-F422FE8986B4}
+	EndGlobalSection
+EndGlobal

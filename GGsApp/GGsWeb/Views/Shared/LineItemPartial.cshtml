@@ -1,0 +1,41 @@
+﻿@model GGsWeb.Models.LineItem
+@{
+    ViewData["Title"] = "LineItemPartial";
+}
+
+<div class="card">
+    <div class="card-body">
+        <h5 class="card-title">@Html.DisplayFor(model => model.videoGame.name)</h5>
+        <div class="container">
+            <div class="row">
+                <div class="col">
+                    <article>
+                        @Html.DisplayNameFor(model => model.videoGame.platform):
+                        @Html.DisplayFor(model => model.videoGame.platform)
+                    </article>
+                </div>
+                <div class="col">
+                    <article class="text-right">
+                        @Html.DisplayNameFor(model => model.quantity):
+                        @Html.DisplayFor(model => model.quantity)
+                    </article>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col">
+                    <article>
+                        @Html.DisplayNameFor(model => model.videoGame.esrb):
+                        @Html.DisplayFor(model => model.videoGame.esrb)
+                    </article>
+                </div>
+                <div class="col">
+                    <article class="text-right">
+                        @Html.DisplayNameFor(model => model.videoGame.cost):
+                        @Html.DisplayFor(model => model.videoGame.cost)
+                    </article>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+

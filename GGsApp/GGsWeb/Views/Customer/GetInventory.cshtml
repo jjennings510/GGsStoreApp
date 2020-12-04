@@ -1,0 +1,17 @@
+﻿@model IEnumerable<GGsWeb.Models.InventoryItem>
+
+@{
+    ViewData["Title"] = "GetInventory";
+}
+
+<h1 class="text-white display-4">Available Products</h1>
+<hr />
+
+@*<partial name="CardView"  />*@
+
+<div class="container card-deck card-columns">
+    @foreach (var item in Model)
+    {
+        @Html.Partial("InventoryItemPartial", item);
+    }
+</div>
